@@ -59,7 +59,7 @@ export default function Chat() {
 				setConversationId(currentConversationId);
 				console.log(`Conversation ID: ${currentConversationId}`);
 				console.log(characterId);
-				const messageResponse = await axios.get(`/api/conversation/${currentConversationId}/messages`, 
+				const messageResponse = await axios.get(`${import.meta.env.VITE_API_URL}/api/conversation/${currentConversationId}/messages`, 
 					{ headers: {Authorization: `Bearer ${token}`}}
 				);
 

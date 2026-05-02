@@ -67,7 +67,7 @@ export default function Home() {
     }
 
     try {
-      const response = await axios.post(`/api/characters/like`, {characterId: characterId}, { headers: { Authorization: `Bearer ${token}` }});
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/characters/like`, {characterId: characterId}, { headers: { Authorization: `Bearer ${token}` }});
       console.log(response);
       const updatedCharacter = response.data.data;
       console.log(updatedCharacter);

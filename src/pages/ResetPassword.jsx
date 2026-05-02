@@ -43,7 +43,7 @@ export default function ResetPassword() {
 		}
         
         console.log(newPassword);
-        const response = await axios.put(`/api/auth/resetpassword/${urlToken}`, {password: newPassword});
+        const response = await axios.put(`${import.meta.env.VITE_API_URL}/api/auth/resetpassword/${urlToken}`, {password: newPassword});
 
         const jwtToken = response.data.token;
         const userData = response.data.data;

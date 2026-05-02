@@ -30,7 +30,7 @@ export default function Chat() {
 				setLoading(false);
 				return;
 			}
-			const characterResponse = await axios.get(`/api/characters/${characterId}`, {headers: {Authorization: `Bearer ${token}`}});
+			const characterResponse = await axios.get(`${import.meta.env.VITE_API_URL}/api/characters/${characterId}`, {headers: {Authorization: `Bearer ${token}`}});
 			setCharacter(characterResponse.data.data);
 			console.log(characterResponse.data.data);
 		};

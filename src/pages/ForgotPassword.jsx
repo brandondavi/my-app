@@ -13,7 +13,7 @@ export default function ForgotPassword() {
         try {
             setError('sending email...');
             console.log(email);
-            const response = await axios.post('/api/auth/forgotpassword', {email});
+            const response = await axios.post('${import.meta.env.VITE_API_URL}/api/auth/forgotpassword', {email});
             console.log(response);
 
         } catch (err) {

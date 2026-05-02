@@ -14,7 +14,7 @@ export default function CreateCharacter() {
 	
 	useEffect(()=>{
 		const fetchTags = async () => {
-			const res = await axios.get('${import.meta.env.VITE_API_URL}/api/characters/tags');
+			const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/characters/tags`);
 			setAvailableTags(res.data.data);
 
 		};
@@ -45,7 +45,7 @@ export default function CreateCharacter() {
     console.log("Form payload:", characterFormData);
 	try {
 		console.log(token);
-		await axios.post('${import.meta.env.VITE_API_URL}/api/characters/create', characterFormData, { headers: { Authorization: `Bearer ${token}` } });
+		await axios.post(`${import.meta.env.VITE_API_URL}/api/characters/create`, characterFormData, { headers: { Authorization: `Bearer ${token}` } });
 	} catch (err) {
 		setError(err.response?.data?.error || 'Could not send character details.');
 		return;

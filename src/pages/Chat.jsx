@@ -49,7 +49,7 @@ export default function Chat() {
 			try {
 				// get or create the conversation
 				const conversationResponse = await axios.post(
-					'${import.meta.env.VITE_API_URL}/api/conversation/start',
+					`${import.meta.env.VITE_API_URL}/api/conversation/start`,
 					{characterId}, 
 					{headers: {Authorization: `Bearer ${token}`}}
 
@@ -90,7 +90,7 @@ export default function Chat() {
 
 		try {
 			const response = await axios.post(
-				'${import.meta.env.VITE_API_URL}/api/message/send',
+				`${import.meta.env.VITE_API_URL}/api/message/send`,
 				{conversationId: conversationId, content: textToSend},
 				{headers: {Authorization: `Bearer ${token}`}}
 			);

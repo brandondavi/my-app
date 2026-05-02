@@ -25,7 +25,7 @@ export default function Home() {
 
 	useEffect(()=>{
 		const fetchTags = async () => {
-			const res = await axios.get('${import.meta.env.VITE_API_URL}/api/characters/tags');
+			const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/characters/tags`);
 			setAvailableTags(res.data.data);
       console.log(selectedTags);
 		};
@@ -41,7 +41,7 @@ export default function Home() {
 
       try {
         const res = await axios.get(
-          '${import.meta.env.VITE_API_URL}/api/characters/', {
+          `${import.meta.env.VITE_API_URL}/api/characters/`, {
             headers: { Authorization: `Bearer ${token}` },
             params: { search: debouncedQuery, sort: sortBy, tags: selectedTags.join(',')}
           });

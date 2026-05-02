@@ -77,7 +77,7 @@ export default function Verify() {
 		}
 		
 		try {
-			const response = await axios.post('${import.meta.env.VITE_API_URL}/api/auth/verify', {
+			const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/verify`, {
 				email,
 				passkey: fullPasskey
 			});
